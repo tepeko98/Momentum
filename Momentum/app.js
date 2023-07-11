@@ -61,3 +61,14 @@ function plus (a, b){
     console.log(a+b);
 }
 plus(3, 5); //2.8 04:32
+
+// player.sayHello() 만들기
+const player = {
+    name: "nico",
+    sayHello: function(otherPersonsName){
+        console.log("hello!" + otherPersonsName + " nice to meet you!");
+    },
+}
+console.log(player.name); //"nico"
+player.sayHello("lynn"); //hello! lynn nice to meet you!
+
