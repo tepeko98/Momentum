@@ -72,4 +72,3 @@ const player = {
 console.log(player.name); //"nico"
 player.sayHello("lynn"); //hello! lynn nice to meet you!
 
-g
