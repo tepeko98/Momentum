@@ -72,3 +72,103 @@ const player = {
 console.log(player.name); //"nico"
 player.sayHello("lynn"); //hello! lynn nice to meet you!
 
+// recap 1 array.push
+const toBuy = ["potato", "tomato", "pizza"];
+
+console.log(toBuy); //potato tomato pizza
+toBuy[2] = "water";
+console.log(toBuy); //potato water pizza
+toBuy.push("meat");
+console.log(toBuy); // potato water pizza meat
+
+// recap 2 object
+const player = {
+    name: "nico",
+    age: 98,
+}
+console.log(player); // {name: "nico", age: "98"}
+player.name = "nicolas";
+console.log(player); // {name: "nicolas", age: "98"}
+player.sexy = "soon";
+console.log(player); // {name: "nicolas", age: "98", sexy: "soon"}
+
+// recap 2 function
+function plus(a,b) {
+    console.log(a + b);
+}
+plus(3, 5); // 8
+
+// recap 2 calculator
+const calculator = {
+    add: function (a,b) {
+        console.log(a+b);
+    },
+    minus: function (a,b) {
+        console.log(a-b);
+    },
+    divide: function (a,b) {
+        console.log(a/b);
+    },
+    times: function (a,b) {
+        console.log(a*b);
+    },
+    power: function (a,b) {
+        console.log(a**b);
+    }
+}
+
+calculator.add(3,5); //8
+calculator.minus(5,3); //2
+calculator.divide(9,3); //3
+calculator.times(2,8); //16
+calculator.power(8,2); //36
+
+// console -> alert *Ctrl + Shift + L 혹은 Alt + 좌클릭으로 여러 줄 선택
+const calculator = {
+    add: function (a,b) {
+        alert(a+b);
+    },
+    minus: function (a,b) {
+        alert(a-b);
+    },
+    divide: function (a,b) {
+        alert(a/b);
+    },
+    times: function (a,b) {
+        alert(a*b);
+    },
+    power: function (a,b) {
+        alert(a**b);
+    }
+}
+
+console.log(calculator.add(3,5)); //창에는 8이 뜨지만 console에는 undefined
+
+// function은 return 값을 반환한다.
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2;
+}
+
+const KrAge = calculateKrAge(age);
+console.log(KrAge); // 98
+
+// return 활용하여 calculator 코드 작성
+const calculator = {
+    plus: function(a,b) {
+        return a + b;
+    }
+};
+
+const plusResult = calculator.plus(2, 3);
+
+console.log(plusResult);
+
+// prompt and type
+const age = prompt("How old are you?") // 창 띄워서 사용자에게 값 받기
+console.log(typeof age); // string
+
+// string => Integer
+console.log(typeof "15", typeof parseInt("15")); // string number
+console.log(age, parseInt(age)); // 입력한 값이 string, number 타입으로 출력, string을 입력할 경우 string, NaN으로 출력
+
