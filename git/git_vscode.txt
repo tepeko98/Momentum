@@ -1,0 +1,46 @@
+vscode
+
+1. 소스컨트롤에서 이니셜라이즈 리파지토리 클릭
+2. 파일-프리퍼런스-설정-exclude검색-.git 폴더 삭제
+->.git 폴더가 원본 폴더에 포함되는 게 아닌 vscode 안에
+따로 백업해두는 것이다. 원본 폴더에 문제가 생기면
+삭제하고 다시 시작할 수 있다.
+------안해도됨------
+
+------vscode로 커밋하는 방법------
+working directory -> Stage Area -> Repository (.git)
+HEAD -> master(or main)
+뉴 버전을 만들어서 커밋하면 HEAD 안 master(or main)에 넣는다.
+1. 새파일 생성 및 코드 작성
+2. 소스컨트롤 가보면 바뀐 파일들이 나온다.
+3. +를 누른 파일은 working directory -> Stage Area 이동한다.
+4. 위에 버전 이름을 쓰고 커밋 클릭
+- HEAD -> master -> version1
+5. open gitlog 클릭 및 user.email, user.name 설정
+6. new terminal 생성
+- git config --global user.name "your_name"
+- git config --global user.email "your_email"
+- git log로 확인, q로 빠져나오기
+- 다시 커밋 누르기
+* 경로에러뜨면 
+- git remote remove origin
+- git remote add origin url
+- git pull "원격저장소별칭(보통 origin)" master(or main)
+- git push "원격저장소별칭(보통 origin)" master(or main)
+- 이래도 안 되면 git clone 경로 해서 다시 하기
+7. 다른 파일들 + 누르고 버전 이름 쓰고 커밋 클릭
+- master(or main)에 들어 있던 버전과 비교해서 같으면 부모 버전으로 물려받고, 새로운 버전을 부여받는다. HEAD -> master (or main) -> version2(새로운버전) -> version1(기존 버전)
+
+* git graph 받아서 활성화(밑에 버튼 생김)하면 편하다.
+
+------구버전 신버전 자유자재로 접근하는 방법------
+- git checkout version(가고싶은 버전)
+1. git log로 커밋 id를 확인하고 checkout 한다.
+2. git log 확인해보면 이전버전으로 바뀌어 있고, 이후에 추가했던 파일들을 모두 가려진다.
+3. 이후에 추가한 것들을 다시 찾으려면 git log --all 하면 된다.
+4. git log --all --oneline 으로 입력하면 심플하게 한 줄 요약된다.
+5. 현재로 돌아오려면 최신버전을 가리키고 있는 master(or main)을 다시 불러와야 하므로 git checkout master(or main)
+
+------vscode git 이용해서 협업하기------
+1. githup settings - Collaboratiors - Add people - email or name
+2. 
