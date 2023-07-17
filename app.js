@@ -226,12 +226,56 @@
 // HTML에 h1 작성 후 id 지정, 크롬 콘솔에서 확인
 // document.getElementById("title")
 
-// app.js에서 실행
-const title = document.getElementById("title");
+// ID로 접근
+// const title = document.getElementById("title");
+// console.dir(title);
+
+// title.innerText = "Got you!"; // title.innerText로 title 변경
+
+// console.log(title.id); // title objects 내 id에 접근
+// console.log(title.className); // title objects 내 className에 접근
+
+// ClassName으로 접근
+// const hellos = document.getElementsByClassName("hello");
+// console.log(hellos);
+
+// querySelector, querySelectorAll -> element를 CSS 방식으로 검색
+// const title = document.querySelector(".hello h1");
+// console.log(title); // querySelector는 한 개만 가져온다.
+
+// const title = document.querySelector(".hello h1");
+// const title = document.querySelectorAll(".hello h1");
+// const title = document.getElementById("hello");
+// const title = document.querySelector(".hello:first-child h1");
+// title.innerText = "Hello";
+
+// background-color 조작
+// console.dir(title); // element 내부 확인
+// title.style.color = "blue" // 원하는 값에 접근하여 변경
+
+// eventListner
+const title = document.querySelector(".hello:first-child h1");
+
+function handleTitleClick() {
+    console.log("title was clicked!");
+    title.style.color = 'blue';
+}
+
+function handleMouseEnter(){
+    title.innerText = "Mouse is here!";
+}
+
+function handleMouseLeave(){
+    title.innerText = "Mouse is gone!";
+}
+
+title.addEventListener("click", handleTitleClick);
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
+// click 할 경우에 handleTitleClick 함수를 실행
+
+// h1 HTML elemnt mdn 구글링 후 Web APIs 확인
+// HTMLelement 클릭 후 event 탭 확인
+// 이걸 하기 싫다면
 console.dir(title);
-
-title.innerText = "Got you!"; // title.innerText로 title 변경
-
-console.log(title.id); // title objects 내 id에 접근
-console.log(title.className); // title objects 내 className에 접근
-
+// console 창에서 h1 클릭 후 objects 내부에서 onEvent 찾기
