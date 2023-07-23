@@ -254,6 +254,33 @@
 // title.style.color = "blue" // 원하는 값에 접근하여 변경
 
 // eventListner
+// const title = document.querySelector(".hello:first-child h1");
+
+// function handleTitleClick() {
+//     console.log("title was clicked!");
+//     title.style.color = 'blue';
+// }
+
+// function handleMouseEnter(){
+//     title.innerText = "Mouse is here!";
+// }
+
+// function handleMouseLeave(){
+//     title.innerText = "Mouse is gone!";
+// }
+
+// title.addEventListener("click", handleTitleClick);
+// title.addEventListener("mouseenter", handleMouseEnter);
+// title.addEventListener("mouseleave", handleMouseLeave);
+// click 할 경우에 handleTitleClick 함수를 실행
+
+// h1 HTML elemnt mdn 구글링 후 Web APIs 확인
+// HTMLelement 클릭 후 event 탭 확인
+// 이걸 하기 싫다면
+// console.dir(title);
+// console 창에서 h1 클릭 후 objects 내부에서 onEvent 찾기
+
+// 위와 같은 코드를 .on~코드로 변형해서 사용 가능
 const title = document.querySelector(".hello:first-child h1");
 
 function handleTitleClick() {
@@ -269,13 +296,8 @@ function handleMouseLeave(){
     title.innerText = "Mouse is gone!";
 }
 
-title.addEventListener("click", handleTitleClick);
-title.addEventListener("mouseenter", handleMouseEnter);
+title.onclick = handleTitleClick;
+title.onmouseenter = handleMouseEnter;
 title.addEventListener("mouseleave", handleMouseLeave);
-// click 할 경우에 handleTitleClick 함수를 실행
+// addEventListner를 사용하면 .removeEventLister로 이벤트를 없앨 수 있으므로 유용하다.
 
-// h1 HTML elemnt mdn 구글링 후 Web APIs 확인
-// HTMLelement 클릭 후 event 탭 확인
-// 이걸 하기 싫다면
-console.dir(title);
-// console 창에서 h1 클릭 후 objects 내부에서 onEvent 찾기
