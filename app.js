@@ -274,30 +274,94 @@
 // title.addEventListener("mouseleave", handleMouseLeave);
 // click 할 경우에 handleTitleClick 함수를 실행
 
-// h1 HTML elemnt mdn 구글링 후 Web APIs 확인
+// h1 HTML element mdn 구글링 후 Web APIs 확인
 // HTMLelement 클릭 후 event 탭 확인
 // 이걸 하기 싫다면
 // console.dir(title);
 // console 창에서 h1 클릭 후 objects 내부에서 onEvent 찾기
 
 // 위와 같은 코드를 .on~코드로 변형해서 사용 가능
-const title = document.querySelector(".hello:first-child h1");
+// const h1 = document.querySelector(".hello:first-child h1");
 
+// function handleTitleClick() {
+//     console.log("title was clicked!");
+//     h1.style.color = 'blue';
+// }
+
+// function handleMouseEnter(){
+//     h1.innerText = "Mouse is here!";
+// }
+
+// function handleMouseLeave(){
+//     h1.innerText = "Mouse is gone!";
+// }
+
+// h1.onclick = handleTitleClick;
+// h1.onmouseenter = handleMouseEnter;
+// h1.addEventListener("mouseleave", handleMouseLeave);
+// // addEventListner를 사용하면 .removeEventLister로 이벤트를 없앨 수 있으므로 유용하다.
+
+// // window 이벤트 중에 resize 활용
+// // document.으로 title, head, body 등을 불러올 수 있다.
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// window.addEventListener("resize", handleWindowResize);
+// // window 이벤트 중에 copy 활용
+// function handleWindowCopy(){
+//     alert("copier!"); // ctrl+c 입력 시 copier! 안내창 출력
+// }
+
+// window.addEventListener("copy", handleWindowCopy);
+
+// // window 이벤트 중에 on/offline 활용
+// function handleWindowOffline() {
+//     alert("SOS no WIFI");
+// }
+
+// function handleWindowOnline(){
+//     alert("WIFI is connected!")
+// }
+
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+// // CSS in Javascript
+
+// const h1 = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick() {
+//     const currentColor = h1.style.color;
+//     let newColor; // 값이 없고 비어 있는 변수
+//     if(currentColor === "blue"){
+//         newColor = "tomato";
+//     } else {
+//         newColor = "blue";
+//     }
+//     h1.style.color = newColor;
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+// 위 내용을 css에 작성하고 연동하기
+const h1 = document.querySelector("div.hello:first-child h1");
+
+// css 에서 .active 활용, h1의 className이 active라면 비우고, 아니라면 active를 채워넣기
 function handleTitleClick() {
-    console.log("title was clicked!");
-    title.style.color = 'blue';
+    // active를 변수에 정의
+    // const ClickedClass = "active";
+    // classList.contains.remove(class), classList.contains.add(class) 활용
+    // 기존 class 보존, 변경 등 가능
+    // if(h1.classList.contains(ClickedClass)){
+    //     h1.classList.remove(ClickedClass);
+    // } else {
+    //     h1.classList.add(ClickedClass);
+    // }
+    // toggle을 활용한다면 더욱 편하게 정리 가능
+    // toggle은 h1의 classList에 active class가 있는지 확인하고
+    // 있다면 제거, 없다면 추가하는 기능을 가지고 있다.
+    h1.classList.toggle("active");
 }
 
-function handleMouseEnter(){
-    title.innerText = "Mouse is here!";
-}
-
-function handleMouseLeave(){
-    title.innerText = "Mouse is gone!";
-}
-
-title.onclick = handleTitleClick;
-title.onmouseenter = handleMouseEnter;
-title.addEventListener("mouseleave", handleMouseLeave);
-// addEventListner를 사용하면 .removeEventLister로 이벤트를 없앨 수 있으므로 유용하다.
-
+h1.addEventListener("click", handleTitleClick);
