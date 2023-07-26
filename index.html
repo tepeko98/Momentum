@@ -8,6 +8,7 @@
         <title>Momentum</title> <!--웹사이트 제목 작성-->
     </head>
     <body>
+        <h2 id="clock">00:00:00</h2>
         <!-- form 안에 input을 넣으면 required, maxlength 등 활용할 수 있고
         enter, click 등의 이벤트 발생 시 자동으로 submit 된다. -->
         <form class="hidden" id="login-form">
@@ -18,12 +19,12 @@
                 placeholder="What is your name?" />
             <button>Log In</button>
         </form>
+        <h1 id="greeting" class="hidden"></h1>
         <!-- todo에 작성할 칸 만들기 -->
         <form id="todo-form">
             <input type="text" placeholder="Write a To Do and Press Enter" required />
         </form>
-        <h1 id="greeting" class="hidden"></h1>
-        <h2 id="clock">00:00:00</h2>
+        <ul id="todo-list"></ul>
         <div id="quote">
             <span></span>
             <span></span>
