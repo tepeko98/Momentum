@@ -8,7 +8,14 @@ function onGeoOk(position){
     // 화씨 온도가 나오므로 링크 끝에 &units=metric 추가해서 섭씨로 변경
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     // fetch 함수 활용 crhome-network-weather 클릭-Preview
-    fetch(url);
+    // 지역과 날씨 가져와서 변수 선언
+    fetch(url).then((response) => response.json()).then((data) => {
+        // html에서 생성한 div, span 불러오기
+        const weather = document.querySelector("#weather span:first-child");
+        const city = document.querySelector("#weather span:last-child");
+        city.innerHTML = data.name;
+        weather.innerHTML = `${data.weather[0].main} / ${data.main.temp}`;
+    });
 };
 function onGeoError(){
     alert("Can't find you. No weather for you.")
