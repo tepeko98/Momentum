@@ -1,3 +1,5 @@
+// 코드 연습용
+
 // alert("hi");
 
 // const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
