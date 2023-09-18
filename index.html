@@ -4,40 +4,46 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css"> <!--css 파일 불러오기-->
+        <link rel="stylesheet" href="style.css"> <!--css 파일 불러오기-->
         <title>Momentum</title> <!--웹사이트 제목 작성-->
     </head>
     <body>
-        <h2 id="clock">00:00:00</h2>
-        <!-- form 안에 input을 넣으면 required, maxlength 등 활용할 수 있고
-        enter, click 등의 이벤트 발생 시 자동으로 submit 된다. -->
-        <form class="hidden" id="login-form">
-            <input 
-                required 
-                maxlength="15" 
-                type="text" 
-                placeholder="What is your name?" />
-            <button>Log In</button>
-        </form>
-        <h1 id="greeting" class="hidden"></h1>
-        <!-- todo에 작성할 칸 만들기 -->
-        <form id="todo-form">
-            <input type="text" placeholder="Write a To Do and Press Enter" required />
-        </form>
-        <ul id="todo-list"></ul>
-        <div id="quote">
-            <span></span>
-            <span></span>
+        <div class="container">
+            <h2 id="clock">00:00:00</h2>
+    
+            <form class="hidden" id="login-form">
+                <input 
+                    required 
+                    maxlength="15" 
+                    type="text" 
+                    placeholder="What is your name?" />
+                <button>Log In</button>
+            </form>
+    
+            <h1 id="greeting" class="hidden"></h1>
+    
+            <form id="todo-form">
+                <input type="text" placeholder="Write a To Do and Press Enter" required />
+            </form>
+    
+            <ul id="todo-list"></ul>
+    
+            <div id="quote">
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div id="weather">
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div id="weather">
-            <span></span>
-            <span></span>
-        </div>
-        <script src="js/clock.js"></script> <!-- js 파일 풀러오기-->
+        <script src="js/clock.js"></script>
         <script src="js/greetings.js"></script>
         <script src="js/quotes.js"></script>
         <script src="js/background.js"></script>
         <script src="js/todo.js"></script>
         <script src="js/weather.js"></script>
     </body>
+    
 </html>
